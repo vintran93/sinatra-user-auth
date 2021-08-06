@@ -2,11 +2,13 @@
 
 ## Overview
 
-In this codealong lab, we'll build a Sinatra application that will allow users to sign up for, log into, and then log out of your application.
+In this codealong lab, we'll build a Sinatra application that will allow users
+to sign up for, log into, and then log out of your application.
 
 ## Objectives
 
-1. Explain how logging in to an application stores a user's ID into a `session` hash
+1. Explain how logging in to an application stores a user's ID into a `session`
+   hash
 2. Set up a root path and homepage for the application
 3. Build a user sign-up flow with a Users model that signs in and logs in a user
 4. Log out the user by clearing the `session` hash
@@ -15,7 +17,9 @@ In this codealong lab, we'll build a Sinatra application that will allow users t
 
 ### Logging In
 
-What does it mean for a user to 'log in'? The action of logging in is the simple action of storing a user's ID in the `session` hash. Here's a basic user login flow:
+What does it mean for a user to 'log in'? The action of logging in is the simple
+action of storing a user's ID in the `session` hash. Here's a basic user login
+flow:
 
 1. User visits the login page and fills out a form with their email and
    password. They hit 'submit' to `POST` that data to a controller route.
@@ -49,7 +53,11 @@ already a Ruby method for emptying a hash: `#clear`.
 
 ### User Registration
 
-Before a user can sign in, they need to sign up! What does it mean to 'sign up'? A new user submits their information (for example, their name, email, and password) via a form. When that form gets submitted, a `POST` request is sent to a route defined in the controller. That route will have code that does the following:
+Before a user can sign in, they need to sign up! What does it mean to 'sign up'?
+A new user submits their information (for example, their name, email, and
+password) via a form. When that form gets submitted, a `POST` request is sent to
+a route defined in the controller. That route will have code that does the
+following:
 
 1. Gets the new user's name, email, and password from the `params` hash.
 2. Uses that info to create and save a new instance of `User`. For example:
@@ -155,8 +163,9 @@ Our `User` model has a few attributes: a name, email, and password.
 
 #### Step 1: Migration
 
-Write a migration that creates a `Users` table with columns for name, email, and
-password. Run `rake db:migrate SINATRA_ENV=test` and then run your test suite.
+Use `rake db:create_migration` to write a migration that creates a `Users` table
+with columns for name, email, and password. Run
+`rake db:migrate SINATRA_ENV=test` and then run your test suite.
 
 You'll see that you're passing a number of tests, including these:
 
